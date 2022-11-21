@@ -1,0 +1,125 @@
+.searchBar{
+  margin-top: 11vh;
+  width: 65vw;
+  padding: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background-color: #e35f39;
+  border-radius: 15px;
+  & > .searchBar-item {
+    margin-right: 30px;
+    &:last-child{
+      margin-right: 0;
+    }
+    &.input-component{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: white;
+      border: 1px solid #e3e3e3;
+      border-radius: 15px;
+      width: fit-content;
+      padding: 10px;
+      height: 20px;
+
+      &[isselector="true"]{
+        & > input{
+          width: 190px;
+        }
+        & > select{
+          width: 60px;
+        }
+      }
+      & > p{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      & > input{
+        border: 0;
+        padding-left: 10px;
+        height: 20px;
+        width: 250px;
+        background-color: transparent;
+      }
+      & > select{
+        &:hover{
+          cursor: pointer;
+        }
+        height: 20px;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+      }
+    }
+    &.link{
+      text-decoration: none;
+      color: #e8e8e8;
+      transition: color 0.2s ease;
+      font-weight: 500;
+      &:hover{
+        color: #ffffff;
+      }
+    }
+    &.button{
+      background-color: transparent;
+      color: white;
+      font-weight: 500;
+      padding: 10px;
+      border: 1px solid #cabaaf;
+      border-radius: 15px;
+      width: 20%;
+      transition: all 0.2s ease;
+      &:hover{
+        cursor: pointer;
+        filter: brightness(120%);
+      }
+    }
+  }
+  @media (max-width: 1096px){
+    &{
+      flex-direction: column;
+      width: 90vw;
+    }
+    &>.searchBar-item{
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+  @media (max-width: 1840px){
+    &>.searchBar-item{
+      &:last-child {
+        margin-top: 10px;
+      }
+      &.input-component{
+        width: 90%;
+        & > #icon{
+          width: 5%;
+        }
+        & > input{
+          width: 95%;
+        }
+        &[isselector="true"]{
+          & > input{
+            width: 75%;
+          }
+          & > select{
+            width: 20%;
+          }
+        }
+      }
+      &.button{
+        width: 100%;
+      }
+    }
+  }
+}
