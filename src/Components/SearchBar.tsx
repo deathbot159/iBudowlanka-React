@@ -20,6 +20,7 @@ class SingleSearchBar extends React.Component<any, any>{
                 <button className={"searchBar-item button"}>
                     Wyszukaj ogłoszenie 🔍
                 </button>
+                <a href={"#"} className={"searchBar-item collapse-toggle"}>C</a>
             </div>
         </>
     }
