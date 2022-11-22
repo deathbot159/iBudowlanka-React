@@ -2,9 +2,31 @@ import React from "react";
 import "../Styles/SearchBar.scss"
 
 class SingleSearchBar extends React.Component<any, any>{
+
+    private handleCollapse(){
+        let toggle = window.document.querySelectorAll(".searchBar-item.collapse-toggle")[0];
+        toggle.hasAttribute("active")? toggle.removeAttribute("active"): toggle.setAttribute("active", "");
+        toggle.innerHTML = toggle.hasAttribute("active")? "O": "C";
+        let selector = window.document.querySelectorAll(".searchBar-item");
+        toggle.hasAttribute("active")?
+            selector.forEach((v, i)=>{
+                if(i===0)
+                    v.setAttribute("active", "");
+                else if(i!==selector.length-1)
+                    v.setAttribute("hidden", "");
+            }):
+            selector.forEach((v, i)=>{
+                if(i===0)
+                    v.removeAttribute("active");
+                else if(i!==selector.length-1)
+                    v.removeAttribute("hidden");
+            });
+    }
+
     render(){
         return <>
             <div className={"searchBar"}>
+                <span className={"searchBar-item name"}>Wyszukiwarka</span>
                 <SearchBarInput icon="🔎" defaultText="Wpisz, czego szukasz..." />
                 <SearchBarInput
                     icon="📌"
@@ -20,7 +42,7 @@ class SingleSearchBar extends React.Component<any, any>{
                 <button className={"searchBar-item button"}>
                     Wyszukaj ogłoszenie 🔍
                 </button>
-                <a href={"#"} className={"searchBar-item collapse-toggle"}>C</a>
+                <span className={"searchBar-item collapse-toggle"} onClick={this.handleCollapse}>C</span>
             </div>
         </>
     }

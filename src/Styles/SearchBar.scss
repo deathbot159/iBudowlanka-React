@@ -1,6 +1,6 @@
 .searchBar{
   margin-top: 11vh;
-  width: 65vw;
+  width: 70vw;
   padding: 10px;
 
   margin-left: auto;
@@ -16,8 +16,17 @@
   border-radius: 15px;
   & > .searchBar-item {
     margin-right: 30px;
-    &:last-child{
-      margin-right: 0;
+    &[hidden]{
+      display: none !important;
+    }
+    &.name{
+      display: none;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      &[active]{
+        display: block;
+      }
     }
     &.input-component{
       display: flex;
@@ -73,6 +82,7 @@
       color: white;
       font-weight: 500;
       padding: 10px;
+      margin-right: 0;
       border: 1px solid #cabaaf;
       border-radius: 15px;
       width: 20%;
@@ -84,6 +94,16 @@
     }
     &.collapse-toggle{
       display: none;
+      margin-top: auto;
+      margin-bottom: auto;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 1096px){
+      &.collapse-toggle{
+        display:block;
+      }
     }
   }
   @media (max-width: 1096px){

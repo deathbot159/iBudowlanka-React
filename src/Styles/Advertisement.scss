@@ -1,0 +1,13 @@
+.advertisement-image{
+  width: 60vw;
+  height: auto;
+  display: flex;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 1036px) {
+   &{
+     width: 90vw;
+   }
+  }
+}

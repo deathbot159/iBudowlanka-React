@@ -11,7 +11,9 @@ export default class Menu extends React.Component<any, any>{
         let collapsedContainer = window.document.querySelectorAll("#menu-collapse>#container")[0]!;
         button.innerText = button.hasAttribute("active")? "O": "C";
         button.hasAttribute("active")? button.removeAttribute("active"): button.setAttribute("active", "");
-        button.hasAttribute("active")? collapsedContainer.setAttribute("style", "display: flex;") : collapsedContainer.removeAttribute("style");
+        button.hasAttribute("active")?
+            collapsedContainer.setAttribute("active", "") :
+            collapsedContainer.removeAttribute("active");
     }
 
     render() {
@@ -19,7 +21,7 @@ export default class Menu extends React.Component<any, any>{
             <div className={"menu"}>
                 <div id={"flex-1st-item"}>{" "}</div>
                 <div id={"logo"}>
-                    <img src={logo} alt={logo}/>
+                    <img src={logo} alt={"logo"}/>
                 </div>
                 <div id={"menu-items"}>
                     {/* eslint-disable jsx-a11y/anchor-is-valid */}

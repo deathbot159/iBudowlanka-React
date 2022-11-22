@@ -96,6 +96,8 @@
             display: none;
             flex-direction: column;
             margin-top: 10vh;
+            overflow: hidden;
+            height: fit-content;
             & > .collapsed-menu-item{
                 display: flex;
                 justify-content: center;
@@ -141,6 +143,9 @@
             & > div.collapsed-menu-item  > button#register {
                 border-color: #e51f1f;
                 background-color: #e64646
+            }
+            &[active]{
+                display:flex;
             }
         }
     }
